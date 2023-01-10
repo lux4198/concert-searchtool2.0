@@ -4,6 +4,8 @@
 
 /backend
 
+/utils/supabase
+
 # dependencies
 /node_modules
 /.pnp

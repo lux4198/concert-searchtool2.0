@@ -1,0 +1,132 @@
+.card{
+    min-width: 800px;
+    margin-top: 1rem;
+    margin-bottom: 1rem; 
+    background-color: white;
+    color: black;
+    border: 6px solid var(--highlightcolor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    margin-bottom : 1rem ; 
+    margin-top: 1rem ; 
+    text-decoration : none ;  
+    white-space : break-spaces ; 
+    font-size: 1.6rem;
+}
+
+
+
+.block td{
+    display: block;
+}
+
+
+.city_date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.picture{
+    display: none;
+}
+
+.card_bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+
+.musicians{
+    margin-left: 0.5rem;
+    width: fit-content;
+}
+
+.composerWrap{
+    border-top: 3px solid black ;
+    margin-top: 1rem;
+    margin-bottom: 1rem; 
+    width: 100%;
+
+}
+
+.composerExpand{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.composerExpand button{
+    display: flex; 
+    flex-direction: column;
+}
+
+
+@media only screen and (min-width : 700px){
+
+    .card{
+        border-radius: 80px;
+    }
+
+    .card_top{
+        display: flex;
+        width: 100%;
+    }
+    .city_date{
+        display: flex;
+        min-width: 25%;
+        flex-direction: row;
+        margin-left: 0.8rem;
+    }
+
+    .date_picture{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .picture{
+        display: flex;
+        width: 80%; 
+        margin-bottom: auto;
+        margin-top: 1rem;
+    }
+
+    .city_date h4{
+        transform: rotate(180deg);
+        writing-mode: vertical-lr;
+    }
+
+    .rightside{
+        flex: 1;
+        text-align: left;
+    }
+
+    .rightside a{
+        text-decoration: none;
+    }
+
+    .composerExpand{
+        display: none;
+        flex-direction: row;
+        justify-content: start;
+    }
+
+    .block td p {
+        display: inline;
+        text-align: left;
+    }
+
+    
+}
