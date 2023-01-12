@@ -1,0 +1,27 @@
+
+.searchbarContainer{
+    background-color: var(--highlightcolor);
+    position: relative;
+}
+
+.complete, .searchbar{
+    position: absolute;
+    top: 0;
+    left : 0;
+    width: 700px; 
+    padding: 12px 20px;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+    background: transparent;
+    border-radius: 20px;
+}
+
+.complete{
+    color: rgb(102, 98, 98);    
+    background: white;
+    height: 60px;
+    padding: 14px 21px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 300;
+}
