@@ -65,10 +65,10 @@ export default function Home({today2, allConcerts}) {
   // tracks filter date
   const [filterDate, setFilterDate] = useState(today2)
 
-  const cities = ['Berlin', 'Hamburg', 'Dresden']
+  const cities = ['Berlin', 'Hamburg', 'Frankfurt', 'München', 'Dresden']
   
   // tracks which cities are active in city filter 
-  const [cityState, setCityState] = useState(new Array(3).fill(false))
+  const [cityState, setCityState] = useState(new Array(5).fill(false))
 
   const updateCityState = (index) => {
     let newArr = [...cityState]
@@ -109,8 +109,7 @@ export default function Home({today2, allConcerts}) {
   // if query is empty return allConcerts, else search for query
   const concerts = (!query[0])? filterConcerts(allConcerts) : searchConcerts(query, 0, filterConcerts(allConcerts))
 
-  console.log(filterCities(concerts))
-  // console.log(concerts)
+  console.log(concerts)
 
   const onSubmit = (query) => {
     setQuery(query.split(" "))
