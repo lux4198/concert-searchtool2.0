@@ -1,5 +1,110 @@
 
 
+.home-page-container{
+    /* height: 100vh; */
+    /* margin: 2rem; */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    /* margin-bottom: 20vh; */
+}
+
+
+.title-search-container{
+    margin-top: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.search-filter-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18vh;
+}
+
+
+.drop-down-element, .datepicker{
+    width : 200px; 
+    height: 50px;
+
+    margin-top: 10vh;
+    padding: 5px;
+
+    color: black;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.drop-down-title, .datepicker input{
+    background-color: white;
+    padding: 10px 15px; 
+    padding-bottom: 5px;
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 250ms ease ;
+    border-bottom: solid white 4px;
+}
+
+.drop-down-title:hover{
+    border-bottom: solid #e7471c 4px;
+}
+
+.drop-down-title span{
+    padding: 2px;
+}
+
+.drop-down-title .arrow-down{
+    transition: all 250ms ; 
+}
+
+.drop-down-title .active{
+    transform: rotate(180deg);
+}
+
+.filter-items-list{
+    right: 0;
+    width: 100%;
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    text-align: left;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 250ms ease-in;
+}
+
+.visible{
+    visibility: visible;
+    opacity: 1;
+    background-color: white;
+}
+
+.filter-item{
+    transition: all 100ms ease; 
+    padding : 10px 15px; 
+}
+
+
+.filter-items-list .active{
+    background-color: #e7471c;
+    color : white ; 
+}
+
+
+.filter-item:hover{
+    background-color: #e7471c;
+    color : white ; 
+}
+
 
 .concert-item-container{
     display: flex;
