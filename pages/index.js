@@ -130,7 +130,7 @@ export default function Home({today2, allConcerts}) {
             </div>
             <div class = 'drop-down-element'>
               <div onClick = {() => setFilterVisibility(!filterVisibility)} class = 'drop-down-title'>
-                <span>Cities</span>
+                <span style = {{'letterSpacing' : '0.1ch'}}>Stadt</span>
                 <img class = {filterVisibility? 'arrow-down active' : 'arrow-down'} src= {'svg/arrowDown.svg'} alt = 'arrowDown' height={'10px'} width = {'15px'}/>
               </div>
               <ul class = {filterVisibility? 'filter-items-list visible' : 'filter-items-list'} >

@@ -1,5 +1,5 @@
 .card{
-    min-width: 800px;
+    width: 90%;
     margin-top: 1rem;
     margin-bottom: 1rem; 
     background-color: white;
@@ -11,19 +11,47 @@
     align-items: center;
 }
 
+.card_top{
+    padding: 1rem;
+}
+
 .title{
     margin-bottom : 1rem ; 
     margin-top: 1rem ; 
     text-decoration : none ;  
     white-space : break-spaces ; 
     font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1ch;
+    text-align: center;
+    color: var(--bg-color);
 }
 
+.title p{
+    margin-bottom : 1rem ; 
+    margin-top: 1rem ; 
+    white-space : break-spaces ; 
+    letter-spacing: 0.1ch;
+    text-align: center;
+    color: var(--bg-color);
+}
 
+.title p:hover{
+    color : #2d0064 ; 
+}
+
+.table{
+    width: 100%; 
+}
+
+.table tr{
+    display: block;
+}
 
 .block td{
     display: block;
 }
+
 
 
 .city_date{
@@ -31,6 +59,14 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 1rem;
+}
+
+.city{
+    font-size: 1.5rem;
+    letter-spacing: 0.25ch;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 .picture{
@@ -63,18 +99,26 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     margin-top: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
 }
 
-.composerExpand button{
-    display: flex; 
-    flex-direction: column;
+.composerExpand img{
+    margin-top: 0.6rem;
+}
+
+.block{
+    display: none;
 }
 
 
-@media only screen and (min-width : 700px){
+@media only screen and (min-width : 900px){
 
     .card{
+        width: 900px;
         border-radius: 80px;
     }
 
@@ -82,11 +126,20 @@
         display: flex;
         width: 100%;
     }
+
+    .title p{
+        text-align: left;
+    }
+
     .city_date{
         display: flex;
         min-width: 25%;
-        flex-direction: row;
         margin-left: 0.8rem;
+        justify-content: start;
+    }
+
+    .city{
+        margin: 1rem 0;
     }
 
     .date_picture{
@@ -117,10 +170,19 @@
         text-decoration: none;
     }
 
-    .composerExpand{
+    .composerExpand img{
         display: none;
+    }
+
+    .composerExpand{
         flex-direction: row;
         justify-content: start;
+        text-align: left;
+        cursor: text;
+    }
+
+    .block{
+        display : block ; 
     }
 
     .block td p {

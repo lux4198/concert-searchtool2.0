@@ -7,12 +7,11 @@ function getPlaceholder(query, concerts){
         return ''
     }
     else{
-        let placeholder = concerts.find(concert => concert.title.startsWith(query))
-        return placeholder? placeholder.title : ''
+        let placeholder = concerts.find(concert => concert.conductor.startsWith(query))
+        return placeholder? placeholder.conductor : ''
     }
         
 }
-
 
 
 export default function Searchbar(props) {
@@ -20,11 +19,14 @@ export default function Searchbar(props) {
 
     const [input, setInput] = useState('')
 
+
     return (
         <div className= {styles.searchbarContainer}>
             <div className= {styles.complete}>{getPlaceholder(input, concerts)}</div>
-             <input value = {input} onChange = {e => setInput(e.target.value)} type="text" placeholder= {'Search ...'} className= {styles.searchbar} id = 'searchInput'>
-             </input>
+             <form onSubmit={evt => {evt.preventDefault(); props.onSubmit(evt.target[0].value)}}>
+                 <input value = {input} onChange = {(evt) => setInput(evt.target.value)} type="text" placeholder= {'Search ...'} className= {styles.searchbar} id = 'searchInput'>
+                 </input>
+             </form>
         </div>
     )
 }

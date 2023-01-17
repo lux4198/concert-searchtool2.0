@@ -2,6 +2,8 @@
 .searchbarContainer{
     background-color: var(--highlightcolor);
     position: relative;
+    width: 700px; 
+    margin-top: 5vh;
 }
 
 .complete, .searchbar{
@@ -24,4 +26,15 @@
     overflow: hidden;
     white-space: nowrap;
     font-weight: 300;
+}
+
+
+@media only screen and (max-width : 700px){
+    .searchbarContainer{
+        width : 90%; 
+    }
+
+    .complete, .searchbar{
+        width: 90%;
+    }
 }

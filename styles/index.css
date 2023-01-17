@@ -11,29 +11,31 @@
 
 
 .title-search-container{
-    margin-top: 30vh;
+    margin-top: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 90%;
 }
 
 
 .search-filter-container{
+    min-width: 500px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 18vh;
+    justify-content: space-evenly;
+    /* margin-bottom: 18vh; */
 }
 
 
 .drop-down-element, .datepicker{
+    position: relative;
     width : 200px; 
     height: 50px;
 
     margin-top: 10vh;
-    padding: 5px;
 
     color: black;
     cursor: pointer;
@@ -54,12 +56,13 @@
     border-bottom: solid white 4px;
 }
 
-.drop-down-title:hover{
+
+.drop-down-title:hover, .datepicker input:hover{
     border-bottom: solid #e7471c 4px;
 }
 
 .drop-down-title span{
-    padding: 2px;
+    padding: 1px;
 }
 
 .drop-down-title .arrow-down{
@@ -71,15 +74,17 @@
 }
 
 .filter-items-list{
+    position: absolute;
     right: 0;
-    width: 100%;
+    width: 200px;
     padding: 0;
     list-style-type: none;
     margin: 0;
     text-align: left;
     visibility: hidden;
     opacity: 0;
-    transition: all 250ms ease-in;
+    transition: all 150ms ease-in;
+    border-bottom : 4px solid #000F46; 
 }
 
 .visible{
@@ -110,4 +115,19 @@
     display: flex;
     flex-direction: column;    
     align-items: center;
+}
+
+
+@media only screen and (max-width : 700px){
+    .search-filter-container{
+        flex-direction: column;
+    }
+
+    .datepicker{
+        margin-top : 10vh; 
+    }
+    
+    .drop-down-element{
+        margin-top: 5vh;
+    }
 }
