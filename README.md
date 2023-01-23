@@ -1,3 +1,16 @@
+![](./Screenshot_fullPage.png)
+
+## About the Project 
+
+This Webapp helps you find concerts for the major classical orchestras in Germany for the current concert season. You can search for a mix of composers, conductors, musicians, pieces etc. and filter your search by cities and date. 
+
+## Built With 
+
+This Project uses NextJs to statically generate the site. The Concert data was gathered by Web scraping with Python Library [Beautiful Soup 4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) and the data is stored in a PostGreSQL Database on [Supabase](https://supabase.com/). The Search function uses Fuzzysearch from [fuse.js](https://fusejs.io/). 
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
