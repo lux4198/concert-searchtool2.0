@@ -2,7 +2,9 @@
 
 # backend stuff for now 
 
-/backend
+/backend/insert_data.py
+/backend/.env
+/backend/scrapers/__pycache__/
 
 # dependencies
 /node_modules
