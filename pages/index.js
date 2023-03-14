@@ -5,23 +5,29 @@ import Searchbar from "../components/searchbar/searchbar";
 import { useState } from "react";
 import Fuse from "fuse.js";
 
+// returns current date in 2 formats
+const getCurrentDate = () => {
+  let today = new Date(); 
+  let dd = String(today.getDate()).padStart(2, '0'); 
+  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0 
+  let yyyy = today.getFullYear() ; 
+  today = mm + '-' + dd + '-' + yyyy; 
+  const today2 = yyyy + '-' + mm + '-' + dd; 
+
+  return [today, today2]; 
+}
+
 
 export const getStaticProps = async () => {
 
 // get current date 
-  var today = new Date()
-  var dd = String(today.getDate()).padStart(2, '0')
-  var mm = String(today.getMonth() + 1).padStart(2, '0') //January is 0!
-  var yyyy = today.getFullYear() 
-  today = mm + '-' + dd + '-' + yyyy
-  const today2 = yyyy + '-' + mm + '-' + dd
+const today = getCurrentDate()[0]; 
 
 // get future concerts
   const { data: allConcerts } = await supabase.from('concerts').select().gte('datetime', today).order('datetime')
 
   return {
     props: {
-      today2,
       allConcerts,
     },
   };
@@ -53,8 +59,10 @@ function searchConcerts(query, index, allConcerts){
 }
 
 
-export default function Home({today2, allConcerts}) {
+export default function Home({allConcerts}) {
 
+  // state tracks how many concerts are rendered at a time 
+  const [concertIndex, setConcertIndex] = useState(20)
   
   // state for query from searchbar
   const [query, setQuery] = useState('')
@@ -63,7 +71,7 @@ export default function Home({today2, allConcerts}) {
   const [filterVisibility, setFilterVisibility] = useState(false)
 
   // tracks filter date
-  const [filterDate, setFilterDate] = useState(today2)
+  const [filterDate, setFilterDate] = useState(getCurrentDate()[1])
 
   const cities = ['Berlin', 'Hamburg', 'Frankfurt', 'München', 'Dresden']
   
@@ -109,7 +117,7 @@ export default function Home({today2, allConcerts}) {
   // if query is empty return allConcerts, else search for query
   const concerts = (!query[0])? filterConcerts(allConcerts) : searchConcerts(query, 0, filterConcerts(allConcerts))
 
-  console.log(concerts)
+  // console.log(concerts)
 
   const onSubmit = (query) => {
     setQuery(query.split(" "))
@@ -142,9 +150,12 @@ export default function Home({today2, allConcerts}) {
       </div>
       
       <div class = 'concert-item-container'>
-        {concerts.map((concert) =>
+        {concerts.slice(0, concertIndex).map((concert) =>
           <ConcertItem concert = {concert} />
         )}
+        <button class = 'extend-concerts-button' onClick = {() => setConcertIndex(concertIndex + 20)}>
+          <img src= {'svg/arrowDown.svg'} alt = 'arrowDown' height={'15px'} width = {'20px'}/>
+        </button> 
       </div>
     </div>
   )

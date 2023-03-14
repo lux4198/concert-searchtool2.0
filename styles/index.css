@@ -75,6 +75,7 @@
 
 .filter-items-list{
     position: absolute;
+    z-index: 1;
     right: 0;
     width: 200px;
     padding: 0;
@@ -112,9 +113,23 @@
 
 
 .concert-item-container{
+    position: relative;
+    z-index: 0;
+    margin-bottom: 10vh;
+    padding-bottom: 10vh;
     display: flex;
     flex-direction: column;    
     align-items: center;
+}
+
+.extend-concerts-button{
+    position: absolute;
+    bottom : 0; 
+    right : 20vw; 
+    content: '';
+    padding: 20px;
+    display: inline-block;
+    border-radius: 50%;
 }
 
 
